@@ -1,10 +1,8 @@
 import re
-import bs4
 import traceback
 import base64
 import urllib.parse
 from multiprocessing.pool import ThreadPool
-from itertools import product
 
 import requests
 
