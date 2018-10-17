@@ -4,7 +4,6 @@ from engine.mamont import MamontEngine
 from engine.napalm import NapalmEngine
 
 
-
 def main(args):
     all_engines = [NapalmEngine(), MamontEngine()]
 

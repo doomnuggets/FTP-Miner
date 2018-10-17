@@ -21,14 +21,6 @@ class NapalmEngine(Engine):
         session = requests.Session()
         session.headers['Referer'] = self.base_url
         session.headers['Host'] = 'www.searchftps.net'
-        session.headers['Accept-Language'] = 'en-US;en;q=0.5'
-        session.headers['Cache-Control'] = 'no-cache'
-        session.headers['Connection'] = 'keep-alive'
-        session.headers['DNT'] = '1'
-        session.headers['Host'] = 'www.searchftps.net'
-        session.headers['Pragma'] = 'no-cache'
-        session.headers['Upgrade-Insecure-Requests'] = '1'
-        session.headers['User-Agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0'
         session.get(self.base_url + 'about')  # grab the session cookie.
         return session
 

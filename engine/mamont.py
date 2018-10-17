@@ -1,6 +1,6 @@
 import re
 import traceback
-from urllib.parse import urljoin, quote, unquote
+import urllib.parse
 from multiprocessing.pool import ThreadPool
 
 import requests
@@ -14,7 +14,7 @@ class MamontEngine(Engine):
         super(MamontEngine, self).__init__('Mamont', 'http://www.mmnt.ru/')
 
     def search(self, keyword):
-        search_url = urljoin(self.base_url, f'/int/get?st={keyword}')
+        search_url = urllib.parse.urljoin(self.base_url, f'/int/get?st={keyword}')
         response = requests.get(search_url)
         total_pages = self._extract_number_of_pages(response.text)
         if total_pages == 0:
