@@ -8,7 +8,7 @@ Thus the current version of FTP-Miner includes the two remaining engines: Napalm
 
 Clone the repo, initialize a new virtualenv, install the deps.
 
-```
+```bash
 git clone https://github.com/doomnuggets/FTP-Miner.git
 cd FTP-Miner
 python -m venv venv
@@ -20,7 +20,13 @@ python ftpminer.py --help
 Usage:
 
 ```
+usage: ftpminer.py [-h] -s SEARCH [-b]
 
+optional arguments:
+  -h, --help            show this help message and exit
+  -s SEARCH, --search SEARCH
+                        The keyword(s) to search for.
+  -b, --show-banner     Show engine banner above search results.
 ```
 
 
