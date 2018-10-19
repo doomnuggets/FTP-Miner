@@ -59,8 +59,11 @@ class NapalmEngine(Engine):
             traceback.print_exc()
             return None
 
-        b64_encoded_ftp_url = re.search('decodeURIComponent\(escape\(decode\(\'([a-zA-Z0-9=]+)\'\)\)\);', response.text).group(1)
-        return base64.b64decode(b64_encoded_ftp_url).decode('utf8', errors='replace')
+        try:
+            b64_encoded_ftp_url = re.search('decodeURIComponent\(escape\(decode\(\'([a-zA-Z0-9=]+)\'\)\)\);', response.text).group(1)
+            return base64.b64decode(b64_encoded_ftp_url).decode('utf8', errors='replace')
+        except(AttributeError, TypeError):
+            return None
 
     def _extract_hashes(self, src):
         # javascript:go('content', {'type': 'f', 'hash': 'ldsjgliedsgoij123io1rjofolij'})
